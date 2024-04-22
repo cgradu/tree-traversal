@@ -62,27 +62,53 @@ class Tree:
             return self._find(data, node.right)
 
     def deleteTree(self):
-        # TODO 1
+        """Deletes the entire tree by setting the root to None."""
         self.root = None
 
     def printTree(self):
-        # TODO 1
+        """Prints the tree in inorder traversal."""
         if self.root is not None:
             self._printInorderTree(self.root)
 
     def _printInorderTree(self, node):
-        # TODO 1
+        """Prints the tree in inorder traversal recursively.
+
+        Args:
+            node (Node): The current node being traversed.
+
+        Returns:
+            None
+        """
         if node is not None:
             self._printInorderTree(node.left)
             print(str(node.data) + ' ')
             self._printInorderTree(node.right)
 
     def _printPreorderTree(self, node):
-        # TODO 2
-        pass
+        """Prints the tree in preorder traversal recursively.
+
+        Args:
+            node (Node): The current node being traversed.
+
+        Returns:
+            None
+        """
+        if node is not None:
+            print(str(node.data) + ' ')
+            self._printPreorderTree(node.left)
+            self._printPreorderTree(node.right)
 
     def _printPostorderTree(self, node):
-        # TODO 2
-        pass
+        """Prints the tree in postorder traversal recursively.
 
+        Args:
+            node (Node): The current node being traversed.
 
+        Returns:
+            None
+        """
+        if node is not None:
+            self._printPostorderTree(node.left)
+            self._printPostorderTree(node.right)
+            print(str(node.data) + ' ')
+            
